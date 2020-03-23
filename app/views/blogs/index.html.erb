@@ -1,18 +1,18 @@
-<h1>ブログ一覧</h1>
+<h2>タイムライン</h2>
 <p><%= notice %></p>
 <table>
   <tr>
     
-    <th>内容</th>
+    <th>ツイート</th>
   </tr>
 <% @blogs.each do |blog| %>
   <tr>
    
     <td><%= blog.content %></td>
     <td><%= link_to '詳細', blog_path(blog.id) %></td>
-    <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
-    <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete %></td>
+    <td><%= link_to "編集", edit_blog_path(blog.id) %></td>
+    <td><%= link_to '削除', blog_path(blog.id), method: :delete %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+<%= link_to 'ツイートする', new_blog_path %>
